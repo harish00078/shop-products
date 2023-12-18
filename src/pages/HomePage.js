@@ -3,16 +3,18 @@
 // first we need to import the react from the react:
 import React from "react";
 import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 const HomePage = () => {
   return (
-    <div>
+    <Container className="mt-4">
       <h2>Shop-here</h2>
       <h2>
-        <Link to='/products'> products-Page
+      Click-Here:- 
+        <Link to='/products'>products-Page
         </Link>
       </h2>
-    </div>
+    </Container>
   );
 };
 

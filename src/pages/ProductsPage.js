@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 // third we import the particular api-function:which we have particularly created for this page component:
 import { getProducts } from "../api";
 
+import { Container,ListGroup } from "react-bootstrap";
+
 // know we create the (ProductsPage):
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +41,7 @@ const ProductsPage = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
+    <Container className="mt-4">
       <h2>Products Page</h2>
       {/* <div className="home-page">
         <h1>
@@ -48,14 +50,14 @@ const ProductsPage = () => {
       </div> */}
  
 
-      <ul>
+      <ListGroup>
         {products.map((product) => (
-          <li key={product.id}>
+          <ListGroup.Item key={product.id}>
             <Link
               to={`/products/${product.id}`}
               style={{ textDecoration: "none", color: "blue" }}
             >
-              <p>Click-Here: Detials</p>
+              <p style={{cursor:'pointer'}}>Click-Here: Detials</p>
             </Link>
 
             <div className="product-title">
@@ -71,11 +73,14 @@ const ProductsPage = () => {
                 </div>
               </div>
             </div>
-          </li>
+          </ListGroup.Item>
         ))}
-      </ul>
-    </div>
+      </ListGroup>
+    </Container>
   );
 };
 
 export default ProductsPage;
+
+
+
